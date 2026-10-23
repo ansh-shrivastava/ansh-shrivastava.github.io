@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b0e0d">
+<meta name="description" content="Ansh Shrivastava — AI/ML research, neural networks, EEG and brain-computer interfaces.">
+<title>Ansh Shrivastava | AI/ML Research Portfolio</title>
+<style>
+:root{--bg:#0b0e0d;--panel:#121715;--line:#2b332f;--text:#eeeae2;--muted:#b2b8b2;--quiet:#7e8981;--accent:#a8d8c2;--max:1200px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:82px}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 Inter,"Segoe UI",Arial,sans-serif}a{color:inherit;text-decoration:none}a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:4px}.wrap{width:min(var(--max),calc(100% - 48px));margin:auto}
+header{height:68px;position:relative;z-index:3;background:#0c100fee;border-bottom:1px solid #ffffff12}.nav{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{font:22px Georgia,serif;letter-spacing:-.03em}.navlinks{display:flex;gap:27px;color:#c0c7c1;font-size:13px}.navlinks a:hover{color:var(--accent)}
+/* The hero image is a real img element, so it remains visible even if CSS background loading differs. */
+.hero{min-height:500px;position:relative;display:flex;align-items:center;overflow:hidden;border-bottom:1px solid var(--line);background:#101513}
+.hero-media{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 48%;z-index:0}
+.hero-shade{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(7,10,9,.98) 0%,rgba(7,10,9,.88) 30%,rgba(7,10,9,.38) 62%,rgba(7,10,9,.12) 100%),linear-gradient(0deg,rgba(7,10,9,.45),transparent 45%)}
+.hero-inner{position:relative;z-index:2;width:min(var(--max),calc(100% - 48px));margin:auto;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;min-height:500px}
+.hero-copy{max-width:620px;padding:68px 0}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.19em;color:var(--accent);font-weight:700}
+h1{font:400 clamp(42px,5.3vw,68px)/1.06 Georgia,"Times New Roman",serif;letter-spacing:-.045em;margin:18px 0 19px;max-width:650px}h1 em{font-style:normal;color:var(--accent)}.hero-copy p{color:#d0d4ce;font-size:16px;max-width:520px;line-height:1.75}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:27px}.btn{display:inline-flex;align-items:center;gap:12px;padding:11px 16px;border:1px solid #707b73;font-size:13px;transition:background .18s,border-color .18s}.btn:hover{border-color:var(--accent);background:#a8d8c211}.btn.primary{background:var(--accent);border-color:var(--accent);color:#101512}.btn.primary:hover{background:#c0e8d4}.hero-caption{align-self:end;justify-self:end;margin:0 0 27px;color:#d5d9d3;font-size:11px;letter-spacing:.07em;text-align:right}
+section{padding:72px 0;border-bottom:1px solid var(--line)}.section-label{display:flex;align-items:center;gap:12px;color:var(--quiet);font-size:11px;text-transform:uppercase;letter-spacing:.17em;margin-bottom:15px}.section-label:after{content:"";width:46px;height:1px;background:#536058}h2{font:400 clamp(32px,4vw,45px)/1.13 Georgia,serif;letter-spacing:-.035em;margin:0 0 22px}
+.about-grid{display:grid;grid-template-columns:.88fr 1.12fr;gap:clamp(32px,5vw,70px);align-items:start}.about-photo-wrap{position:relative;width:100%;max-width:440px}
+.about-photo{width:100%;height:390px;object-fit:cover;object-position:center 35%;border:1px solid var(--line);display:block;filter:saturate(.86);background:#151b18}
+.photo-caption{font-size:11px;color:var(--quiet);margin:10px 0 0;letter-spacing:.04em}
+.photo-placeholder{height:390px;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;border:1px dashed #536058;background:linear-gradient(145deg,#151b18,#0d100f);color:var(--muted)}
+.photo-placeholder strong{display:block;color:var(--accent);font-size:13px;font-weight:600;margin-bottom:7px}
+.photo-placeholder span{font-size:12px;line-height:1.6}.about-copy{color:#c2c8c1;max-width:700px}.about-copy p{margin:0 0 15px}.about-copy strong{color:var(--text);font-weight:600}
+.fact-grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);margin-top:25px}.fact{padding:14px 14px 14px 0;border-bottom:1px solid var(--line)}.fact:nth-child(even){padding-left:17px;border-left:1px solid var(--line)}.fact dt{color:var(--quiet);font-size:10px;text-transform:uppercase;letter-spacing:.13em}.fact dd{margin:4px 0 0;color:#e1e5df;font-size:13px}.inline{color:var(--accent)}.toolkit{margin-top:27px}.toolkit h3{font-size:13px;margin:0 0 12px}.skills{display:flex;flex-wrap:wrap;gap:7px}.skill{font-size:11px;color:#c5cdc5;border:1px solid #39443d;padding:5px 9px}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:28px;margin-bottom:25px}.section-head h2{margin:0}.section-head p{color:var(--muted);max-width:460px;font-size:14px;margin:0}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 25px}.filter{cursor:pointer;border:1px solid var(--line);background:transparent;color:var(--muted);padding:7px 11px;font:inherit;font-size:12px}.filter:hover,.filter.active{border-color:var(--accent);color:var(--accent)}
+.projects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.project{border:1px solid var(--line);background:var(--panel);min-width:0}.project-image{display:block;width:100%;height:190px;object-fit:cover;background:#111715;border-bottom:1px solid var(--line);filter:saturate(.82)}.project-body{padding:19px 20px 20px}.project-meta{display:flex;justify-content:space-between;gap:12px;color:var(--quiet);font-size:10px;text-transform:uppercase;letter-spacing:.13em}.project h3{font:400 25px/1.2 Georgia,serif;margin:10px 0}.project p{color:var(--muted);font-size:13px;margin:0 0 17px}.tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:17px}.tag{font-size:10px;color:#aeb9b0;border-right:1px solid #465149;padding-right:8px}.tag:last-child{border:0}.project-links{display:flex;gap:18px;font-size:12px}.project[hidden]{display:none}
+.research-row,.contact-row{display:flex;align-items:center;justify-content:space-between;gap:30px}.research-row p,.contact-row p{max-width:680px;color:var(--muted);margin:0;font-size:14px}.research-links{display:flex;flex-wrap:wrap;gap:10px}
+footer{padding:22px 0;color:var(--quiet);font-size:11px}.footer{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+@media(max-width:760px){.wrap,.hero-inner{width:calc(100% - 32px)}.navlinks{gap:13px;font-size:12px}.hero,.hero-inner{min-height:465px}.hero-inner{grid-template-columns:1fr}.hero-shade{background:linear-gradient(90deg,rgba(7,10,9,.95),rgba(7,10,9,.65)),linear-gradient(0deg,rgba(7,10,9,.55),transparent)}.hero-copy{padding:60px 0}.hero-caption{display:none}section{padding:52px 0}.about-grid{grid-template-columns:1fr}.about-photo-wrap{max-width:560px}.about-photo,.photo-placeholder{height:330px}.section-head{display:block}.section-head p{margin-top:13px}.research-row,.contact-row{align-items:flex-start;flex-direction:column}.projects{gap:15px}.project-image{height:155px}}
+@media(max-width:500px){.brand{font-size:18px}.navlinks{gap:11px}.navlinks a:nth-child(4){display:none}.hero,.hero-inner{min-height:445px}.hero-copy p{font-size:14px}.fact-grid{grid-template-columns:1fr}.fact:nth-child(even){padding-left:0;border-left:0}.projects{grid-template-columns:1fr}.project-image{height:190px}.about-photo,.photo-placeholder{height:300px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.research-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 34px;
+}
+
+.research-heading > div:first-child {
+  max-width: 790px;
+}
+
+.research-heading h2 {
+  margin-bottom: 18px;
+}
+
+.research-heading p {
+  color: var(--muted);
+  max-width: 720px;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.publication-count {
+  min-width: 120px;
+  padding-left: 24px;
+  border-left: 1px solid var(--line);
+}
+
+.publication-count span {
+  display: block;
+  font: 42px/1 Georgia, serif;
+  color: var(--accent);
+}
+
+.publication-count small {
+  display: block;
+  margin-top: 9px;
+  color: var(--quiet);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+}
+
+.publication-list {
+  border-top: 1px solid var(--line);
+}
+
+.publication {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) 38px;
+  gap: 20px;
+  padding: 30px 0;
+  border-bottom: 1px solid var(--line);
+  align-items: start;
+  transition: background .2s;
+}
+
+.publication-number {
+  padding-top: 3px;
+  color: var(--quiet);
+  font-size: 12px;
+  letter-spacing: .1em;
+}
+
+.publication-content {
+  min-width: 0;
+}
+
+.publication-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  display: inline-block;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.status.under-review .status-dot {
+  background: #b7bfc8;
+}
+
+.publication-type {
+  color: var(--quiet);
+  font-size: 11px;
+}
+
+.publication h3 {
+  margin: 0 0 12px;
+  font: 400 clamp(22px, 2.5vw, 29px)/1.3 Georgia, serif;
+  letter-spacing: -.02em;
+}
+
+.publication-description {
+  max-width: 760px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+  margin: 0 0 17px;
+}
+
+.publication-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  color: var(--quiet);
+  font-size: 11px;
+  margin-bottom: 20px;
+}
+
+.publication-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--accent);
+  font-size: 12px;
+  border-bottom: 1px solid #a8d8c255;
+  padding-bottom: 4px;
+}
+
+.publication-link span {
+  transition: transform .2s;
+}
+
+.publication-link:hover span {
+  transform: translate(3px, -3px);
+}
+
+.publication-note {
+  display: inline-block;
+  color: var(--quiet);
+  font-size: 12px;
+}
+
+.publication-icon {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  color: var(--accent);
+  font-size: 16px;
+}
+
+.muted-icon {
+  color: var(--quiet);
+}
+
+@media (max-width: 600px) {
+  .research-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .publication-count {
+    padding-left: 15px;
+  }
+
+  .publication-count span {
+    font-size: 32px;
+  }
+
+  .publication {
+    grid-template-columns: 25px minmax(0, 1fr);
+    gap: 12px;
+    padding: 25px 0;
+  }
+
+  .publication-icon {
+    display: none;
+  }
+
+  .publication-meta {
+    gap: 10px;
+  }
+}
+</style>
+</head>
+<body>
+<header><nav class="nav wrap" aria-label="Main navigation"><a class="brand" href="#home">Ansh Shrivastava</a><div class="navlinks"><a href="#home">Home</a><a href="#about">About</a><a href="#projects">Projects</a><a href="#research">Research</a><a href="#contact">Contact</a></div></nav></header>
+<main id="home">
+<section class="hero" aria-label="Introduction">
+  <img class="hero-media" src="assets/hero-eeg.jpg" alt="EEG cap and neural activity workstation" fetchpriority="high">
+  <div class="hero-shade"></div>
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <div class="eyebrow">Brain / signals / intelligence</div>
+      <h1>Building intelligent interfaces between the <em>brain</em> and the world.</h1>
+      <p>I work across machine learning, neuroscience, and signal processing, with a focus on brain–computer interfaces and systems that connect models to real-world interaction.</p>
+      <div class="actions"><a class="btn primary" href="#projects">View projects <span aria-hidden="true">↗</span></a><a class="btn" href="#about">About me</a></div>
+    </div>
+    <p class="hero-caption">EEG · Neural signals · Applied machine learning</p>
+  </div>
+</section>
+
+<section id="about"><div class="wrap">
+  <div class="section-label">01 / About me</div>
+  <div class="about-grid">
+    <div class="about-photo-wrap">
+      <img class="about-photo" src="assets/profile.jpg" alt="Portrait of Ansh Shrivastava" loading="lazy"
+           onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+      <!-- <div class="photo-placeholder" hidden><div><strong>Add your portrait here</strong><span>Save your photo as<br><code>assets/profile.jpg</code><br>to show it in this frame.</span></div></div> -->
+      <p class="photo-caption">Ansh Shrivastava · AI/ML Research</p>
+    </div>
+    <div>
+      <h2>Researcher by curiosity.<br>Engineer by practice.</h2>
+      <div class="about-copy">
+        <p>I'm <strong>Ansh Shrivastava</strong>, a computer science student focused on AI and machine learning, with a strong interest in independent research and building systems beyond a notebook.</p>
+        <p>My work spans neural networks, EEG-based interfaces, signal processing, and applied AI. I enjoy understanding the mechanics beneath a model, testing ideas through experiments, and connecting software to real-world systems.</p>
+      </div>
+      <dl class="fact-grid">
+        <div class="fact"><dt>Field</dt><dd>Computer Science · AI/ML</dd></div>
+        <div class="fact"><dt>Education</dt><dd>B.Tech CSE (AI/ML)<br><span style="color:var(--quiet)">Add university / year</span></dd></div>
+        <div class="fact"><dt>Location</dt><dd>Add location if you want it public</dd></div>
+        <div class="fact"><dt>Profiles</dt><dd><a class="inline" href="https://github.com/ansh-shrivastava">GitHub</a> · <a class="inline" href="https://www.linkedin.com/">LinkedIn</a> · <a class="inline" href="https://scholar.google.com/">Scholar</a></dd></div>
+      </dl>
+      <div class="toolkit"><h3>Technical toolkit</h3><div class="skills"><span class="skill">Python</span><span class="skill">TensorFlow</span><span class="skill">PyTorch</span><span class="skill">NumPy</span><span class="skill">scikit-learn</span><span class="skill">EEG / BrainFlow</span><span class="skill">Signal processing</span><span class="skill">C / C++</span><span class="skill">Unity</span><span class="skill">Embedded systems</span></div></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+  <div class="section-head"><div><div class="section-label">02 / Selected work</div><h2>Projects & experiments</h2></div><p>Real projects, implementation notes, and research questions. Each entry can link to source code, a paper, or a future interactive demo.</p></div>
+  <div class="filters" role="group" aria-label="Filter projects"><button class="filter active" data-filter="all" aria-pressed="true">All work</button><button class="filter" data-filter="bci" aria-pressed="false">BCI & signals</button><button class="filter" data-filter="deep-learning" aria-pressed="false">Deep learning</button><button class="filter" data-filter="applied" aria-pressed="false">Applied AI</button><button class="filter" data-filter="research" aria-pressed="false">Research</button></div>
+  <div class="projects">
+    <article class="project" data-category="bci research"><img class="project-image" src="assets/project-eeg.jpg" alt="EEG waveform visualization" loading="lazy"><div class="project-body"><div class="project-meta"><span>01 / BCI</span><span>Signals</span></div><h3>EEG-Based Brain–Computer Interface</h3><p>EEG acquisition and signal-processing workflow exploring classification and simulated assistive control with a multi-channel setup.</p><div class="tags"><span class="tag">EEG</span><span class="tag">BrainFlow</span><span class="tag">Signal processing</span><span class="tag">Unity</span></div><div class="project-links"><a class="inline" href="https://github.com/ansh-shrivastava/YOUR_EEG_REPO">Source code ↗</a><a class="inline" href="#contact">Details ↗</a></div></div></article>
+    <article class="project" data-category="deep-learning research"><img class="project-image" src="assets/project-transformer.jpg" alt="Transformer architecture diagram" loading="lazy"><div class="project-body"><div class="project-meta"><span>02 / Deep learning</span><span>Implementation</span></div><h3>Neural Networks from Scratch</h3><p>Implementations of neural-network components and transformer architectures to inspect tensor operations, training dynamics, and design choices.</p><div class="tags"><span class="tag">Transformers</span><span class="tag">Python</span><span class="tag">Deep learning</span></div><div class="project-links"><a class="inline" href="https://github.com/ansh-shrivastava/YOUR_TRANSFORMER_REPO">Source code ↗</a><a class="inline" href="#contact">Details ↗</a></div></div></article>
+    <article class="project" data-category="applied research"><img class="project-image" src="assets/project-audio.jpg" alt="Audio spectrogram for machine learning" loading="lazy"><div class="project-body"><div class="project-meta"><span>03 / Audio ML</span><span>Detection</span></div><h3>Audio-Based Drone Detection</h3><p>An audio-classification workflow using pretrained embeddings, with attention to dataset quality, class balance, leakage prevention, and evaluation.</p><div class="tags"><span class="tag">YAMNet</span><span class="tag">Audio ML</span><span class="tag">Evaluation</span></div><div class="project-links"><a class="inline" href="https://github.com/ansh-shrivastava/YOUR_DRONE_REPO">Source code ↗</a><a class="inline" href="#contact">Details ↗</a></div></div></article>
+    <article class="project" data-category="research deep-learning"><img class="project-image" src="assets/project-weights.jpg" alt="Neural network weight representation visualization" loading="lazy"><div class="project-body"><div class="project-meta"><span>04 / Model analysis</span><span>Research</span></div><h3>Neural Network Weight Representation</h3><p>An experimental study of floating-point representations and controlled bit changes, examining their effects on layer outputs and model behavior.</p><div class="tags"><span class="tag">Numerical analysis</span><span class="tag">Model weights</span><span class="tag">Ablation</span></div><div class="project-links"><a class="inline" href="https://github.com/ansh-shrivastava/YOUR_WEIGHTS_REPO">Source code ↗</a><a class="inline" href="#contact">Details ↗</a></div></div></article>
+  </div>
+</div></section>
+<section id="research">
+  <div class="wrap">
+    <div class="section-label">03 / Research & Publications</div>
+
+    <div class="research-heading">
+      <div>
+        <h2>Research that moves ideas forward.</h2>
+        <p>
+          My research explores technical questions through experimentation,
+          analysis, and evidence-driven investigation. Below are my published
+          work and current research in the publication process.
+        </p>
+      </div>
+      <div class="publication-count">
+        <span>02</span>
+        <small>Research papers</small>
+      </div>
+    </div>
+
+    <div class="publication-list">
+
+      <!-- PUBLISHED PAPER -->
+      <article class="publication">
+        <div class="publication-number">01</div>
+
+        <div class="publication-content">
+          <div class="publication-meta">
+            <span class="status published">
+              <span class="status-dot"></span>
+              Published
+            </span>
+            <span class="publication-type">Research paper</span>
+          </div>
+
+          <h3>From muscle potentials to computer interfaces</h3>
+
+          <p class="publication-description">
+            Explore my published research, including its methodology,
+            findings, and contribution to the field.
+          </p>
+
+          <div class="publication-details">
+            <span>Peer-reviewed publication</span>
+            <span>ScienceDirect</span>
+          </div>
+
+          <a
+            class="publication-link"
+            href="https://www.sciencedirect.com/science/article/pii/S221418042600019X"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Read published paper <span>↗</span>
+          </a>
+        </div>
+
+        <div class="publication-icon" aria-hidden="true">↗</div>
+      </article>
+
+      <!-- PAPER UNDER REVIEW -->
+      <article class="publication">
+        <div class="publication-number">02</div>
+
+        <div class="publication-content">
+          <div class="publication-meta">
+            <span class="status under-review">
+              <span class="status-dot"></span>
+              Under review
+            </span>
+            <span class="publication-type">Ongoing research</span>
+          </div>
+
+          <h3>SYMPHONY: A Residual 1-D CNN for Decoding
+Background-Music Context from Multimodal
+Autonomic Signals During Working-Memory Tasks</h3>
+
+          <p class="publication-description">
+            A current research project undergoing the publication review
+            process. Further details will be shared when appropriate.
+          </p>
+
+          <div class="publication-details">
+            <span>Manuscript submitted</span>
+            <span>Publication pending</span>
+          </div>
+
+          <span class="publication-note">
+            Manuscript details forthcoming
+          </span>
+        </div>
+
+        <div class="publication-icon muted-icon" aria-hidden="true">⌁</div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<section id="contact"><div class="wrap"><div class="section-label">04 / Contact</div><div class="contact-row"><div><h2>Let's talk about the work.</h2><p>Open to thoughtful discussions, research collaboration, and engineering opportunities.</p></div><a class="btn primary" href="https://www.linkedin.com/in/ansh-shrivastava-133aa7329/">Get in touch ↗</a></div></div></section>
+</main>
+<footer><div class="wrap footer"><span>© <span id="year"></span> Ansh Shrivastava</span><span>Research · Engineering · Learning in public</span></div></footer>
+<script>
+const filterButtons=document.querySelectorAll(".filter");
+const cards=document.querySelectorAll(".project");
+filterButtons.forEach(button=>button.addEventListener("click",()=>{
+ const chosen=button.dataset.filter;
+ filterButtons.forEach(item=>{const active=item===button;item.classList.toggle("active",active);item.setAttribute("aria-pressed",String(active));});
+ cards.forEach(card=>{card.hidden=chosen!=="all"&&!card.dataset.category.split(" ").includes(chosen);});
+}));
+document.getElementById("year").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
